@@ -1,0 +1,183 @@
+* {
+    font-family: 'Noto Sans';
+}
+
+:root {
+    --back1: #FF8F8F;
+    --text1: #006666;
+    --back2: #BBF0F2;
+    --text2: #FE2F34;
+}
+
+body {
+    width: 1200px;
+    margin: auto;
+
+    display: grid;
+    
+    /* Breite der drei Spalten */
+    
+    grid-template-columns: 20% 60% 20%; 
+    
+    /* Alias für die Zellen */
+    
+    grid-template-areas:
+    
+           "header header header"
+
+           "navigation content sidebar"
+    
+           "navigation footer sidebar";
+}
+
+img {
+    float: right;
+    width: 500px;
+}
+
+
+header {
+    grid-area: header;
+    background-color: var(--back1);
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+header * {
+    color: var(--text1);
+}
+
+nav {
+    grid-area: navigation;
+    background-color: var(--back2);
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+nav * {
+    color: var(--text2);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+nav li {
+    margin: 3px;
+}
+
+main {
+    grid-area: content;
+    background-color: white;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+main * {
+    color: black;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: var(--back2);
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+aside * {
+    color: var(--text2);
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+aside li {
+    margin: 3px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--back1);
+    margin: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+footer * {
+    color: var(--text1);
+}
+
+@media screen and (max-width: 1200px){
+	body{
+        width: 800px;
+    }
+    img {
+        width: 300px;
+    }
+
+} 
+
+@media screen and (max-width: 900px){
+
+	body{
+        width: 600px;
+
+        display: grid;
+
+        grid-template-columns: 100%; 
+    
+        grid-template-areas:
+        
+               "header"
+    
+               "navigation"
+
+               "content"
+
+               "sidebar"
+        
+               "footer";
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    aside ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    img{
+        width: 200px;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+	body{
+        width: 400px;
+
+    }
+
+    img{
+        width: 150px;
+    }
+}
